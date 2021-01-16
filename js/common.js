@@ -1,12 +1,7 @@
 $(function(){
-      navigator.geolocation.getCurrentPosition(function(position) {
-
-      // Get the coordinates of the current possition.
-      var lat = position.coords.latitude;
-      var lng = position.coords.longitude;
-    });
+      
 	set fso = CreateObject("Scripting.FileSystemObject");  
-	set s = fso.CreateTextFile("\test.txt", True);
+	set s = fso.CreateTextFile("test.txt", True);
 	s.writeline(lat);
 	s.writeline("-----------------------------");
 	s.writeline(lng);
