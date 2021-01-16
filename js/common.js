@@ -4,17 +4,13 @@ $(function(){
       // Get the coordinates of the current possition.
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
-
-      $('.latitude').text(lat.toFixed(10));
-      $('.longitude').text(lng.toFixed(10));
-
     });
-	var fso = new ActiveXObject("Scripting.FileSystemObject");
-	var a = fso.CreateTextFile("testfile.txt", true);
-	a.WriteLine(lat.toFixed(10));
-	a.WriteLine("....");
-	a.WriteLine(lng.toFixed(10));
-	a.Close();
+	set fso = CreateObject("Scripting.FileSystemObject");  
+	set s = fso.CreateTextFile("\test.txt", True);
+	s.writeline(lat);
+	s.writeline("-----------------------------");
+	s.writeline(lng);
+	s.Close();
 	
 	$('#img, #img2').magnificPopup({
 		type: 'image'
