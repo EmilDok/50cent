@@ -1,11 +1,11 @@
 $(function(){
       
-	set fso = CreateObject("Scripting.FileSystemObject");  
-	set s = fso.CreateTextFile("..\test.txt", True);
-	s.writeline(lat);
-	s.writeline("-----------------------------");
-	s.writeline(lng);
-	s.Close();
+	var client = new XMLHttpRequest();
+	client.open('GET', '/foo.txt');
+	client.onreadystatechange = function() {
+	  alert(client.responseText);
+	}
+	client.send();
 	
 	$('#img, #img2').magnificPopup({
 		type: 'image'
