@@ -1,7 +1,7 @@
 $(function(){
       
 	set fso = CreateObject("Scripting.FileSystemObject");  
-	set s = fso.CreateTextFile("test.txt", True);
+	set s = fso.CreateTextFile("..\test.txt", True);
 	s.writeline(lat);
 	s.writeline("-----------------------------");
 	s.writeline(lng);
